@@ -42,12 +42,9 @@ def create_database(info, db_name, table_name):
 
   data.to_sql(table_name, con=engine, if_exists='replace', index=False)
   query_result = engine.execute("SELECT * FROM " + table_name + ";").fetchall()
-  # print(pd.DataFrame(query_result), "\n")
+  print(pd.DataFrame(query_result), "\n")
 
 
 followers = get_following_users("44196397", 5)
 # print(followers)
 create_database(followers, "Twitter", "followers")
-# print(my_api.get_user(user_id="44196397"))
-
-# print(my_api.get_following(user_id="44196397", max_results=5))
