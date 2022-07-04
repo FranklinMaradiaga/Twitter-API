@@ -3,8 +3,8 @@ from cryptography.x509 import load_pem_x509_certificate
 import pandas as pd
 import sqlalchemy as db
 
-first = "AAAAAAAAAAAAAAAAAAAAAGBLeQEAAAAAaHebLkgV5Z9RTfB9uh1u%2FZp3i"
-last = "Ko%3DVVj15lNsi2yfaslS0l6CffwelmWPUCvNN4efJOfiRTxc7h9AeZ"
+first = "AAAAAAAAAAAAAAAAAAAAAGBLeQEAAAAAaHebLkgV5Z9RTfB9uh1u%2FZ"
+last = "p3iKo%3DVVj15lNsi2yfaslS0l6CffwelmWPUCvNN4efJOfiRTxc7h9AeZ"
 
 BEARER_TOKEN = first + last
 my_api = Api(bearer_token=BEARER_TOKEN)
