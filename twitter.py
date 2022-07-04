@@ -3,7 +3,8 @@ from cryptography.x509 import load_pem_x509_certificate
 import pandas as pd
 import sqlalchemy as db
 
-BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAAGBLeQEAAAAAaHebLkgV5Z9RTfB9uh1u%2FZp3iKo%3DVVj15lNsi2yfaslS0l6CffwelmWPUCvNN4efJOfiRTxc7h9AeZ'
+BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAGBLeQEAAAAAaHebLkgV5Z9RTfB9uh1u%2FZp3iKo%3DVVj15lNsi2yfasl" \
+               "S0l6CffwelmWPUCvNN4efJOfiRTxc7h9AeZ"
 
 my_api = Api(bearer_token = BEARER_TOKEN)
 
@@ -12,10 +13,10 @@ my_api = Api(bearer_token = BEARER_TOKEN)
 def get_dict(ids, names, usernames):
 
     dict = {
-              'ids' : ids,
-              'names' : names,
-              'usernames' : usernames
-           }
+        'ids' : ids,
+        'names' : names,
+        'usernames' : usernames
+    }
     return dict
 
 # This should return a dictionary by calling the get_dict
@@ -26,12 +27,12 @@ def get_following_users(id, max_users):
     names = []
     usernames = []
 
-  for data in response.data:
-      ids.append(data.id)
-      names.append(data.name)
-      usernames.append(data.username)
+    for data in response.data:
+        ids.append(data.id)
+        names.append(data.name)
+        usernames.append(data.username)
 
-  return get_dict(ids, names, usernames)
+    return get_dict(ids, names, usernames)
 
 # The info must be a dictionary to add to the database, d
 # b_name, and table_name should be of type string
