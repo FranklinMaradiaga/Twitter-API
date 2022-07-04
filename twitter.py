@@ -21,6 +21,7 @@ def get_dict(ids, names, usernames):
 
     return dict
 
+
 # This should return a dictionary by calling the get_dict
 # The id must be a of type string and max_users should be of type int
 def get_following_users(id, max_users):
@@ -37,6 +38,7 @@ def get_following_users(id, max_users):
 
     return get_dict(ids, names, usernames)
 
+
 # The info must be a dictionary to add to the database, d
 # b_name, and table_name should be of type string
 def create_database(info, db_name, table_name):
@@ -47,6 +49,7 @@ def create_database(info, db_name, table_name):
     data.to_sql(table_name, con=engine, if_exists='replace', index=False)
     query_result = engine.execute("SELECT * FROM " + table_name + ";").fetchall()
     print(pd.DataFrame(query_result), "\n")
+
 
 followers = get_following_users("44196397", 5)
 create_database(followers, "Twitter", "followers")
