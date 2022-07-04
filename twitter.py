@@ -11,7 +11,9 @@ my_api = Api(bearer_token=BEARER_TOKEN)
 
 # This should return a dictionary of the follow
 # The parameters should all be of type list([])
+
 def get_dict(ids, names, usernames):
+
     dict = {
         'ids': ids,
         'names': names,
@@ -23,6 +25,7 @@ def get_dict(ids, names, usernames):
 # This should return a dictionary by calling the get_dict
 # The id must be a of type string and max_users should be of type int
 def get_following_users(id, max_users):
+  
     response = my_api.get_following(user_id=id, max_results=max_users)
     ids = []
     names = []
@@ -38,6 +41,7 @@ def get_following_users(id, max_users):
 # The info must be a dictionary to add to the database, d
 # b_name, and table_name should be of type string
 def create_database(info, db_name, table_name):
+
     data = pd.DataFrame.from_dict(followers)
     engine = db.create_engine('sqlite:///' + db_name + '.db')
 
