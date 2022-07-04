@@ -9,6 +9,7 @@ last = "p3iKo%3DVVj15lNsi2yfaslS0l6CffwelmWPUCvNN4efJOfiRTxc7h9AeZ"
 BEARER_TOKEN = first + last
 my_api = Api(bearer_token=BEARER_TOKEN)
 
+
 # This should return a dictionary of the follow
 # The parameters should all be of type list([])
 def get_dict(ids, names, usernames):
@@ -47,7 +48,8 @@ def create_database(info, db_name, table_name):
     engine = db.create_engine('sqlite:///' + db_name + '.db')
 
     data.to_sql(table_name, con=engine, if_exists='replace', index=False)
-    query_result = engine.execute("SELECT * FROM " + table_name + ";").fetchall()
+    query_result = engine.execute("SELECT * FROM " + table_name + ";")
+    query_result = query_result.fetchall()
     print(pd.DataFrame(query_result), "\n")
 
 
