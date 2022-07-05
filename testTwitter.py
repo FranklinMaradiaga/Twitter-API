@@ -1,6 +1,7 @@
 import unittest
 from twitter import get_following_users, get_dict, create_database
 
+
 class TestTwitter(unittest.TestCase):
 
     def test_get_following_users(self):
