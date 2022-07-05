@@ -10,7 +10,7 @@ class TestTwitter(unittest.TestCase):
             'ids': ['34719119', '1605', '18989355', '300878435', '541882699'],
             'names': ['Walter Isaacson', 'Sam Altman', 'Mike Solana',
             'Dilbert', 'Andrea Stroppa'],
-            'username': ['WalterIsaacson', 'sama', 'micsolana', 
+            'username': ['WalterIsaacson', 'sama', 'micsolana',
             'Dilbert_Daily',
             'Andst7']
         }
