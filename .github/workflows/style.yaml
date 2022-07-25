@@ -1,4 +1,4 @@
-name: Check Style
+name: CI with Github Actions
 on: push
 
 jobs:
